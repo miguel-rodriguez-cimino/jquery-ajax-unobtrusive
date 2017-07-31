@@ -46,7 +46,7 @@
     function asyncOnSuccess(element, data, contentType) {
         var mode;
 
-        if (contentType.indexOf("application/x-javascript") !== -1) {  // jQuery already executes JavaScript for us
+        if (/\b(?:java|ecma)script\b/.test(contentType)) {  // jQuery already executes JavaScript for us
             return;
         }
 
